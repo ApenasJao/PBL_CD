@@ -1,0 +1,78 @@
+module Cod_LEDS (A,B,C,D,E,L9,L8,L7,L6,L5,L4,L3,L2,L1,L0);
+	input A,B,C,D,E;
+	output L0, L1, L2, L3, L4, L5, L6, L7, L8, L9;
+	
+	wire nA,nB,nC,nD,nE;
+	not n0(nA,A);
+	not n1(nB,B);
+	not n2(nC,C);
+	not n3(nD,D);
+	not n4(nE,E);
+
+	// Saida LED6
+	wire fio1,fio2,fio3;
+	
+	and and0(fio1,A,nB,nC);
+	and and1(fio2,nA,B,C);
+	and and2(fio3,nA,B,D);
+	
+	or or0(L6,fio1,fio2,fio3); //Saida "L6" 
+	
+	//Saida  LED5
+	wire fio4,fio5;
+	
+	and and3(fio4,nA,nB);
+	and and4(fio5,nA,nC,nD);
+	
+	or or1(L5,fio4,fio5); //Saida "L5"
+
+	//Saida  LED4
+	wire fio6;
+	
+	and and5(fio6,nB,nC,D);
+	or or2(L4,fio4,fio5,fio6); //Saida "L4"
+	
+	//Fio4 e Fio5 foram reutilizados do L5
+
+	//Saida  LED3
+	wire fio7,fio8,fio9;
+	
+	and and6(fio7,A,nB,nC,nD);
+	and and7(fio8,nA,B,nC,nD);
+	and and8(fio9,nA,B,C,D,E);
+	
+	or or3(L3,fio7,fio8,fio9); //Saida "L3"
+
+	//Saida  LED2
+	wire fio10,fio11,fio12,fio13;
+	
+	and and9(fio10,nA,nB,C);
+	and and10(fio11,A,nB,nC,E);
+	and and11(fio12,nA,C,nD,E);
+	and and12(fio13,nA,C,D,nE);
+	
+	or or4(L2,fio10,fio11,fio12,fio13); //Saida "L2"
+
+	//Saida LED1
+	wire fio14,fio15,fio16,fio17;
+	
+	and and13(fio14,nA,nB,D);
+	and and14(fio15,nA,nC,D,E);
+	and and15(fio16,A,nB,nC,nD,nE);
+	and and16(fio17,nA,B,C,nD,nE);
+	
+	or or5(L1,fio14,fio15,fio16,fio17); //Saida "L1"
+	
+	//Saida LED0
+	wire fio18, fio19, fio20, fio21,fio22,fio23;
+	
+	and and17(fio18,nA,nB,E);
+	and and18(fio19,nA,B,C,nE);
+	and and19(fio20,nA,B,C,D);
+	and and20(fio21,nA,B,D,nE);
+	and and21(fio22,nB,nC,D,E);
+	and and22(fio23,nA,nC,nD,E);
+	
+	or or6(L0,fio18,fio19,fio20,fio21,fio22,fio23); //Saida "L0"
+	
+endmodule

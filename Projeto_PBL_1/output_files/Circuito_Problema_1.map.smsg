@@ -1,0 +1,10 @@
+Info (10281): Verilog HDL Declaration information at Cod_principal.v(7): object "A" differs only in case from object "a" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_principal.v Line: 7
+Info (10281): Verilog HDL Declaration information at Cod_principal.v(7): object "B" differs only in case from object "b" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_principal.v Line: 7
+Info (10281): Verilog HDL Declaration information at Cod_principal.v(7): object "C" differs only in case from object "c" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_principal.v Line: 7
+Info (10281): Verilog HDL Declaration information at Cod_principal.v(7): object "D" differs only in case from object "d" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_principal.v Line: 7
+Info (10281): Verilog HDL Declaration information at Cod_principal.v(7): object "E" differs only in case from object "e" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_principal.v Line: 7
+Info (10281): Verilog HDL Declaration information at Cod_Caracter_ASCII.v(2): object "A" differs only in case from object "a" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_Caracter_ASCII.v Line: 2
+Info (10281): Verilog HDL Declaration information at Cod_Caracter_ASCII.v(2): object "B" differs only in case from object "b" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_Caracter_ASCII.v Line: 2
+Info (10281): Verilog HDL Declaration information at Cod_Caracter_ASCII.v(2): object "C" differs only in case from object "c" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_Caracter_ASCII.v Line: 2
+Info (10281): Verilog HDL Declaration information at Cod_Caracter_ASCII.v(2): object "D" differs only in case from object "d" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_Caracter_ASCII.v Line: 2
+Info (10281): Verilog HDL Declaration information at Cod_Caracter_ASCII.v(2): object "E" differs only in case from object "e" in the same scope File: /home/aluno/Documentos/Projeto_PBL_1/Cod_Caracter_ASCII.v Line: 2

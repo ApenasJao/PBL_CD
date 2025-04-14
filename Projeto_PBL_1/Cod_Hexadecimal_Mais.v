@@ -1,0 +1,53 @@
+module Cod_Hexadecimal_Mais(A,B,C,D,E, a1,b1,c1,d1,e1,f1,g1);
+	input A,B,C,D,E;
+	output a1,b1,c1,d1,e1,f1,g1;
+
+	wire nA, nB, nC, nD;
+	not notA(nA,A);
+	not notB(nB,B);
+	not notC(nC,C);
+	not notD(nD,D);
+
+	//Expressão a1
+	wire fio1, fio2, fio3, fio4;
+
+	or or1(fio1,C,nD);
+	or or2(fio2, C,D);
+
+	and and1(fio3,A,fio1);
+	and and2(fio4,B,fio2);
+
+	or or3(a1, fio3,fio4);
+	
+	and and_a_d(d1, a1, a1); //Saida a1 e d1 sao iguais
+	
+	//Expressão b1
+	wire fio5;
+
+	or or4(fio5,C,D,B);
+	and and3(b1,A,fio5);
+
+	//Expressão c2
+	wire fio6;
+
+	or or5(fio6,C,B);
+	and and4(c1 ,A,fio6);
+	
+	and and_c_g(g1, c1, c1); //Saida c1 e g1 sao iguais
+	
+	//Expressão e1
+	or ore(e1, A, nA); //Sempre apagado 
+	
+	//Expressão f
+	wire fio7, fio8, fio9, fio10, fio11;
+
+	and and5(fio7,nC,nD);
+	or or6(fio8,A,fio7);
+	and and6(fio9,B,fio8);
+
+	or or7(fio10,C,nA);
+	and and7(fio11,nB,fio10);
+
+	or or8(f1,fio9,fio11);
+
+endmodule

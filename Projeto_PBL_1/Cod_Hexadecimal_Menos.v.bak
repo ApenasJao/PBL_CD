@@ -1,0 +1,121 @@
+module Cod_Hexadecimal_Menos(A,B,C,D,E, a2, b2,c2,d2,e2,f2,g2);
+	input A,B,C,D,E;
+	output a2,b2,c2,d2,e2,f2,g2;
+	
+	wire nA, nB, nC, nD, nE;
+		 not notA(nA,A);
+		 not notB(nB,B);
+		 not notC(nC,C);
+		 not notD(nD,D);
+		 not notE(nE,E);
+		 
+//Segmento "a"		 
+	wire f_1, f_2,f_3,f_4,f_5,f_6, f_7, f_8;
+
+	or or1 (f_1, B, C);
+	and and1(f_2, A,f_1);
+
+	and and2(f_3,C, nD,E);
+	and and3(f_4, nC, D, nE);
+	or or2(f_5, f_3,f_4);
+	and and4(f_6, B,f_5);
+
+	and and5(f_7,nB,C,nD,nE);
+
+	and and6(f_8, nA, nB, nC, nD, E);
+
+	or or3(a2, f_2, f_6, f_7, f_8); //Saida segmento "a2"
+
+//Segmento "b"Letra b:
+	wire f_9 ,f_10, f_11, f_12, f_13, f_14; 
+	or or4(f_9, B,C,E);
+	and and7(f_10, A, f_9);
+
+	and and8(f_11, D, nE );
+	and and9(f_12, nB, nD, E);
+	or or5(f_13, f_11, f_12);
+	and and10( f_14, C, f_13);
+
+	or or6(b2, f_10, f_14 ); //Saida segmento "b2"
+
+//Segmento "c" 
+
+	wire f_15, f_16, f_17, f_18, f_19;
+	and and11(f_15, nD,E);
+	or or7(f_16, B,C,f_15);
+	and and12(f_17,A, f_16);
+
+	and and13(f_18,B, nC, D, E);
+
+	and and14(f_19, nA, nB, nC, D, nE);
+
+	or or8(c2,f_17, f_18, f_19); //Saida segmento "c2"
+
+	//Segmento d
+
+	wire f_20, f_21, f_22, f_23, f_24;
+
+	and and15(f_20, nD, nE);
+	or or9(f_21, B, C, f_20);
+	and and16(f_22, A, f_21);
+
+	//O fio 6 foi reaproveitado do seg "a"
+
+	xnor xnor1(f_23, D, E);
+	and and17(f_24, nB, C, f_23);
+
+	//O fio 8 foi reaproveitado do seg "a"
+
+	or or10(d2, f_22, f_6, f_24, f_8); //Saida segmento "d2"
+
+	//Segmento "e"
+
+	wire f_25, f_26, f_27, f_28, f_29;
+	//Fio 2 reaproveitado do seg "a"
+
+	or or11(f_25, nD, E);
+	and and18(f_26, C, f_25);
+
+	xor xor1(f_27, B, E);
+	and and19(f_28, D, f_27);
+
+	and and20(f_29, nA, nD, E);
+
+	or or12(e2, f_2, f_26, f_28, f_29); //Saida segmento "e2"
+
+	//Segmento "f"
+
+	wire f_30, f_31, f_32, f_33, f_34, f_35, f_36;
+
+	//Fio 2 reaproveitado do seg "a"
+
+	and and21(f_30, nB, E);
+	or or13(f_31, D, f_30);
+	and and22(f_32, nA, nC, f_31);
+
+	and and23(f_33, B ,nD, nE);
+	and and24(f_34, nB ,D, E);
+	or or14(f_35, f_33, f_34);
+	and and25(f_36, C, f_35);
+
+	or or15(f2,f_2, f_32, f_36); //Saida segmento "f2"
+
+	//Segmento g
+
+	wire f_37, f_38, f_39, f_40, f_41, f_42, f_43, f_44, f_45;
+	
+	and and26(f_37, D, nE);
+	or or16(f_38, C, B, f_37); 
+	and and27(f_39, A, f_38);
+	
+	and and28(f_40, B, nC, nE);
+	and and29(f_41, nB, C, E);
+	or or17(f_42, f_40, f_41);
+	and and30(f_43, D, f_42);
+	
+	and and31(f_44, nB, nC, nD,E);
+	
+	and and32 (f_45, nA, nB, nC, nD);
+	or or19(g2, f_39, f_43, f_44, f_45);
+	
+endmodule
